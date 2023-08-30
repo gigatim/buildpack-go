@@ -15,6 +15,8 @@ source "${buildpack}/lib/common.sh"
 source "${buildpack}/lib/common_tools.sh"
 source_stdlib
 
+export GOFLAGS=-buildvcs=false
+
 snapshotBinBefore
 
 DefaultGoVersion="$(<${DataJSON} jq -r '.Go.DefaultVersion')"
